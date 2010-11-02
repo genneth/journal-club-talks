@@ -1,9 +1,13 @@
--- extension to finite temperature [??]
+-- finite dimensional Hilbert spaces
 -- assumption that \lambda -> H(\lambda) is smooth
   -- not unreasonable; even in the presence of level crossings
   -- level crossings should not occur unless in the thermodynamic limit at
      phase transition
   -- discontinuous ground state change => level crossing in finite system (?)
+-- <psi|\partial psi> is purely imaginary, due to normalisation
 -- explain inequality derivation
 -- what does "local" mean for $\delta H$? not a clue
+  -- might not matter: inequality is not tight
 -- Q_\mu\nu/L^d can be finite in the thermodynamic limit even for gapless systems
+-- extension to finite temperature [??]
+
