@@ -1,0 +1,196 @@
+\documentclass[british]{beamer}
+\usepackage{pgfpages}
+%\setbeameroption{show notes on second screen}
+
+\usepackage{lmodern}
+\usepackage{fouriernc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{babel}
+
+\useoutertheme{shadow}
+% make a cambridge colour theme
+% \usecolortheme{beetle}
+\usefonttheme[onlymath]{serif}
+\usefonttheme{structuresmallcapsserif}
+\usefonttheme[onlysmall]{structurebold}
+
+%\setbeamercovered{transparent}
+\mode<presentation>
+
+\title[Yang-Lee Circle Theorem]{C. N. Yang and T. D. Lee \\ \vspace{0.2cm}
+{\it Statistical Theory of Equations of State and Phase Transitions}, Phys. Rev. 87 (1952)\\ \vspace{0.15cm}
+{\it I. Theory of Condensation} \&\\
+{\it II. Lattice Gas and Ising Model}}
+\author{Gen Zhang}
+\date{TCM Journal Club \\ Friday 12th February, 2010}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%\section[Outline]{}
+%\frame{\tableofcontents}
+
+\section{Context and General Theory}
+\subsection{In Fair Verona...}
+\frame
+{
+  \frametitle{Theories of Condensation}
+
+  \begin{itemize}
+  \item Not clear that statistical mechanics can give equations of state for both gas and liquid from the same interactions: ``{\it How can the gas molecules know when they have to coagulate to form a liquid or solid?}''\footnote{M. Born and K. Fuchs, {\it The statistical mechanics of condensing systems}, Proc. Roy. Soc. (London) A166, 391 (1938)}
+  \item Mayer's theory\footnote{J. E. Mayer, {\it The statistical mechanics of condensing systems}, J. Chem. Phys. 5, 67 (1937)} of expanding the pressure $p$ at low chemical potential gives unphysical results --- no liquid state at all at finite density
+  \item In general how to get macroscopic quantities, e.g. isotherms, effectively from statistical mechanics
+  \end{itemize}
+  \note{mention: elementary methods vs ``big machine''}
+}
+
+\subsection{The Partition Function}
+\frame
+{
+  \frametitle{The Model}
+
+  \begin{itemize}
+  \item Classical molecules --- but still indistinguishable.
+  \item Finite range interactions --- dimensionality still makes sense
+  \item Hard core repulsion --- disallow infinite density
+  \item No infinitely deep potential wells --- disallow perfect crystallisation
+  \end{itemize}
+}
+
+\frame
+{
+  \frametitle{The Partition Function}
+
+  Consider then a box of volume $V$ kept at a temperature $T$ and chemical potential $\mu$ by some reservoir. The relative probability of having $n$ atoms in the box is $$Q_n y^n/n!$$ where $$Q_n = \idotsint_V dx_1 \ldots dx_n \exp(-U/kT)$$ is the configurational part of the partition function and $$y = \left(\frac{2\pi m kT}{h^2}\right)^{\frac{3}{2}} \exp(\mu/kT).$$
+}
+
+\frame
+{
+  \frametitle{The Partition Function}
+  
+  The grand partition function is then quite straightforwardly $$\mathcal{Q}_V = \sum_{n=0}^N \frac{1}{n!} Q_n y^n,$$ where $N$ is the maximum number of molecules possible in $V$. Note that $\mathcal{Q}_V$ is:
+
+  \begin{itemize}
+  \item<1-> a finite degree polynomial
+  \item<2-> factorisable into (up to a constant) $$\mathcal{Q}_V = \prod_{i=1}^N\left(1-\frac{y}{y_i}\right)$$ 
+  \note<2->{Write partition function $\mathcal{Q}_V$ factorised, on board}
+  \item<3-> a (complex) analytic function of the fugacity $y$
+  \end{itemize}
+}
+
+\frame
+{
+  \frametitle{Thermodynamic relations}
+  
+  The thermodynamic limit is given by $V \rightarrow \infty$. Accordingly, the presure and density are given by
+  \begin{align*}
+  \frac{p}{kT} &= \lim_{V \rightarrow \infty}\frac{1}{V}\ln \mathcal{Q}_V, \\
+  \rho &= \lim_{V \rightarrow \infty}\frac{\partial}{\partial \ln y}\frac{1}{V}\ln \mathcal{Q}_V.
+  \end{align*}
+  Note that $\rho$ involves a double limit process. This will need to be handled with care.
+  \note{talk about how zeros of partition function turn into poles of density, and their motion in the complex plane}
+}
+
+\subsection{Analytic Properties and Phases}
+\frame
+{
+  \frametitle{Pressure is Well-defined}
+
+  \begin{theorem}
+  For all positive real $y$, $V^{-1} \ln \mathcal{Q}_V$ approaches, as $V\rightarrow \infty$, a limit which is independent of the shape of $V$. Furthermore, this limit is a continuous, monotonically increasing function of $y$.
+  \end{theorem}
+}
+
+\frame
+{
+  \frametitle{Density is Well-defined}
+
+  \begin{theorem}<1->
+  If a region $R$ of the complex $y$ plane, containing a segment of the positive real axis, is always free of roots, then in this region as $V\rightarrow \infty$ the quantities: $$\frac{1}{V}\ln \mathcal{Q}_V, \left(\frac{\partial}{\partial \ln y}\right)\frac{1}{V}\ln \mathcal{Q}_V, \left(\frac{\partial}{\partial \ln y}\right)^2\frac{1}{V}\ln \mathcal{Q}_V, \ldots$$ all approach limits which are analytic with respect to $y$.
+  \end{theorem}
+  
+  In addition:
+  \begin{itemize}
+  \item<2-> The operations of $\partial/\partial \ln y$ and $\lim_{V\rightarrow \infty}$ commute, so that within $R$ $$\rho = \frac{\partial}{\partial \ln y}\left(\frac{p}{kT}\right).$$
+  \item<3-> $\rho$ is also an increasing function of $y$.
+  \end{itemize}
+
+  \note{draw diagrams for a given set of roots; specific volume; talk about phase transitions; compare with Mayer's theory}
+}
+
+\section{Ferromagnetic Ising Model}
+\subsection{Lattice Gas and Ising Model}
+\frame
+{
+  \frametitle{Lattice Gas Equivalence}
+
+  The Ising model is equivalent to a lattice gas, where we identify:
+  \begin{align*}
+  \textrm{total spins, $N$} &= \textrm{volume} \\
+  \textrm{$\downarrow$ spins} &= \textrm{atoms} \\
+  2/(1-m) &= \textrm{specific volume $v$} \\
+  -f-B &= \textrm{pressure $p$} \\
+  s \exp(-2B/kT) &= \textrm{fugacity $y$}
+  \end{align*}
+}
+
+\subsection{Distribution of Roots}
+\frame
+{
+  \frametitle{Distribution of Roots}
+
+  The partition function for $N$ spins is $$\mathcal{P}_N = \sum P_n z^n$$ where $z = \exp(-2B/kT)$, and $P_n$ is the Boltzmann factor for having $n$ $\downarrow$ spins.
+
+  Then note:
+  \begin{itemize}
+  \item<2-> Symmetry under $n \leftrightarrow N-n$
+  \note<2->{inversion symmetry of roots; }
+  \item<3-> Special structure of $P_n$
+  \note<3->{$P_n$ are sums of products}
+  \end{itemize}
+
+}
+
+\frame
+{
+  \frametitle{``Theorem 3''}
+
+  Let $x_{\alpha \beta}=x_{\beta \alpha}$ ($\alpha \neq \beta; \alpha, \beta = 1,2,\ldots n$) be real numbers whose absolute values are less than or equal to 1. Divide the integers $1,2,\ldots n$ into two groups $a$ and $b$ so that there are $\gamma$ integers in group $a$ and $(n-\gamma)$ in group b. Define 
+  \begin{align*}
+  P_\gamma &= \sum \frac{1}{\gamma! (n-\gamma)!} \prod_{i=1}^{\gamma} \prod_{j=1}^{n-\gamma} x_{{a_i} {b_j}}, \\
+  \mathcal{P}(z) &= 1+P_1 z + P_2 z^2 + \ldots + P_{n-1} z^{n-1} + z^n.
+  \end{align*}
+  Then the roots of the equation $$\mathcal{P}=0$$ are on the unit circle.
+
+  \note{mention: distribution of roots of random polynomials tend to avoid the unit circle, and ``neat'' points esp.}
+}
+
+\subsection{Thermodynamics}
+\frame
+{
+  \frametitle{Physical Consequences}
+
+  \begin{itemize}
+  \item<1-> There is at most one phase transition in the ferromagnetic Ising model, occuring at $z=1$. The $m$-$B$ curve is thus continuous everywhere, except possibly at $B=0$.
+  \note<1->{Ising in 1D has no phase transition --- no pinch}
+  \item<2-> Similarly, the lattice gas has (possibly) a phase transition at $y=s$. 
+  \item<3-> The thermodynamic properties are entirely contained by the root distribution function $g(\theta)$ where $N g(\theta) d\theta$ is the number of roots with $z$ between $e^{i\theta}$ and $e^{i(\theta+d\theta)}$.
+  \end{itemize}
+}
+
+\frame
+{
+  \frametitle{Phase Transitions}
+
+  \begin{itemize}
+  \item The actual phase transitions depend on the behaviour of $g(\theta)$ near $\theta = 0$. So write $$g(\theta) = g(0) + a\left|\theta\right|^n+\ldots.$$
+  \item The $g(0)$ term, if non-vanishing, gives a first-order transition.
+  \item Otherwise $n$ controls the order of the transition.
+  \end{itemize}
+}
+
+\end{document}

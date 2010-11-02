@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<manage_target braces="true" utf8="true">yang-lee-circle-talk.bib</manage_target>
+<library_folder monitor="false"></library_folder>
+<taglist>
+</taglist>
+<doclist>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>yang-lee</key>
+    <notes></notes>
+    <bib_type>article</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Statistical Theory of Equations of State and Phase Transitions. I. Theory of Condensation</bib_title>
+    <bib_authors>Yang, C. N. and Lee, T. D.</bib_authors>
+    <bib_journal>Phys. Rev.</bib_journal>
+    <bib_volume>87</bib_volume>
+    <bib_number>3</bib_number>
+    <bib_pages>404-409</bib_pages>
+    <bib_year>1952</bib_year>
+    <bib_extra key="Publisher">American Physical Society</bib_extra>
+  </doc>
+</doclist>
+</library>
