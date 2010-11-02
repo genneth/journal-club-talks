@@ -1,0 +1,9 @@
+-- extension to finite temperature [??]
+-- assumption that \lambda -> H(\lambda) is smooth
+  -- not unreasonable; even in the presence of level crossings
+  -- level crossings should not occur unless in the thermodynamic limit at
+     phase transition
+  -- discontinuous ground state change => level crossing in finite system (?)
+-- explain inequality derivation
+-- what does "local" mean for $\delta H$? not a clue
+-- Q_\mu\nu/L^d can be finite in the thermodynamic limit even for gapless systems
