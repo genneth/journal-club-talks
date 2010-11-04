@@ -1,4 +1,5 @@
 -- finite dimensional Hilbert spaces
+-- Fubini-Study metric --- homegeneous space, like a sphere
 -- assumption that \lambda -> H(\lambda) is smooth
   -- not unreasonable; even in the presence of level crossings
   -- level crossings should not occur unless in the thermodynamic limit at

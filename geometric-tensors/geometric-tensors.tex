@@ -10,6 +10,7 @@
 \usepackage{csquotes}
 \usepackage{babel}
 \usepackage{braket}
+\usepackage{nicefrac}
 
 \useoutertheme{shadow}
 % make a cambridge colour theme
@@ -46,10 +47,10 @@
 \frame{
   \frametitle{Roughly speaking...}
   \begin{itemize}
-    \item ``The strategy [...] is differential-geometric and information-theoretic in nature''
+    \item \emph{``The strategy [...] is differential-geometric and information-theoretic in nature''}
     \item Compare (evaluate overlap of) ground states which are infinitesimally close
     \item Intuitively, at a phase transition, properties change dramatically/singularly with small shifts in parameters
-    \item ``besides its conceptual appeal, can have some practical relevance''
+    \item \emph{``besides its conceptual appeal, can have some practical relevance''}
   \end{itemize}
 }
 
@@ -58,7 +59,7 @@
   \begin{itemize}
     \item Every quantum system has a projective Hilbert space of states: $P\mathcal{H}$, which contains \emph{rays} of normalised states
     \item Comes with a natural inner product on normalised states: $\Braket{\psi|\phi}$
-    \item Extend to a natural, complex metric: $$\gamma(\psi,\phi) = \arccos\left|\Braket{\psi|\phi}\right|$$
+    \item Extend to a natural, homogeneous metric: $$\gamma(\psi,\phi) = \arccos\left|\Braket{\psi|\phi}\right|$$
     \item Infinitesimally (acting on tangent vectors): $$g_\psi(u,v) = \Braket{u|\left(1-\Ket{\psi}\Bra{\psi}\right)v}$$
   \end{itemize}
 }
@@ -67,7 +68,7 @@
   \frametitle{Geometry of parameter space}
   \begin{itemize}
     \item Assume parameters can be made into a manifold $\mathcal{M}$
-    \item At each point of $\mathcal{M}$, there is a Hamiltonian $$H(\lambda)=\sum_{n=0}^{\mathrm{dim} \mathcal{H}} E_n \Ket{\psi_n}\Bra{\psi_n},\textrm{ with }E_{n+1} \ge E_n$$
+    \item At each point $\lambda$ of $\mathcal{M}$, there is a Hamiltonian $$H(\lambda)=\sum_{n=0}^{\mathrm{dim} \mathcal{H}} E_n \Ket{\psi_n}\Bra{\psi_n},\textrm{ with }E_{n+1} \ge E_n$$
     \item Assume $\lambda \mapsto H(\lambda)$ is smooth
     \item Groundstate gives map: $\lambda \mapsto \Ket{\psi_0}$
     \item Pullback $g_\psi(u,v)$ to $\mathcal{M}$: $$Q_{\mu\nu}(\lambda) = \Braket{\partial_\mu \psi_0|\partial_\nu \psi_0} - \Braket{\partial_\mu \psi_0|\psi_0}\Braket{\psi_0|\partial_\nu \psi_0}$$
@@ -115,13 +116,13 @@
   \begin{itemize}
     \item From spectral expansion above, get inequality:
       \begin{align*}
-        \left|Q_{\mu\nu}\right| &\le \sum_{n>0}\epsilon_n^{-2} \left|\Braket{\psi_0|\delta H|\psi_0}\right|^2 \\
-          &< \epsilon_1^{-2} \sum_{n>0} \left|\Braket{\psi_0|\delta H|\psi_0}\right|^2 \\
+        \left|Q_{\mu\nu}\right| &\le \sum_{n>0}\epsilon_n^{-2} \left|\Braket{\psi_0|\delta H|\psi_0}\right|^2 
+          < \epsilon_1^{-2} \sum_{n>0} \left|\Braket{\psi_0|\delta H|\psi_0}\right|^2 \\
           &= \epsilon_1^{-2} \left( \Braket{\delta H \delta H^\dagger} - \left| \Braket{\delta H} \right|^2\right)
       \end{align*}
     \item Assuming $\delta H$ is local, the averages above goes as $L^d K$, where $K$ is finite and independent of system size
     \item Then, $$\lim_{L\rightarrow\infty} \frac{|Q_{\mu\nu}|}{L^d} < K \epsilon_1^2,$$ which is finite
-    \item \emph{Super-extensive behaviour of any of the components of $Q$ for system with local interaction implies a vanishing gap in the thermodynamic limit}
+    \item \emph{``Super-extensive behaviour of any of the components of $Q$ for system with local interaction implies a vanishing gap in the thermodynamic limit''}
   \end{itemize}
 }
 
@@ -137,7 +138,9 @@
 
 \frame{
   \frametitle{Take home message}
-  ``The main message of this paper is that apparently unrelated results can be understood in unified fashion by unveiling the underlying common differential-geometric structure and analysing it quantum-critical behaviour''
+  \begin{center}
+    \emph{``The main message of this paper is that apparently unrelated results can be understood in unified fashion by unveiling the underlying common differential-geometric structure and analysing its quantum-critical behaviour''}
+  \end{center}
 }
 
 \end{document}
